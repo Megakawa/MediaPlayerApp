@@ -1,51 +1,31 @@
 package com.example.zingmp3fake.View;
 
-import android.Manifest;
-import android.app.Activity;
-import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.media.MediaMetadataRetriever;
-import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 
-import androidx.activity.result.ActivityResult;
-import androidx.activity.result.ActivityResultCallback;
-import androidx.activity.result.ActivityResultLauncher;
-import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.provider.MediaStore;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-
-import com.example.zingmp3fake.MainActivity;
 import com.example.zingmp3fake.Model.Music;
 import com.example.zingmp3fake.Model.Source;
 import com.example.zingmp3fake.R;
 import com.example.zingmp3fake.ViewModel.MusicAdapter;
-import com.google.android.gms.tasks.OnFailureListener;
+
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.ListResult;
 import com.google.firebase.storage.StorageReference;
 
-import java.io.DataInputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.util.ArrayList;
 
 public class ListMusicFragment extends Fragment {
@@ -54,10 +34,13 @@ public class ListMusicFragment extends Fragment {
     private ArrayList<Music> musics;
     private MusicAdapter musicAdapter;
 
+    private String url;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
+            url = (String) getArguments().getSerializable("linkStorage");
 
         }
     }
@@ -82,12 +65,12 @@ public class ListMusicFragment extends Fragment {
 
     }
     private void fetchAudioUrlFromFirebase() {
-        final FirebaseStorage storage = FirebaseStorage.getInstance("gs://music-media-23f37.appspot.com");
-        StorageReference storageRef = storage.getReference().child("/audios");
+        final FirebaseStorage storage = FirebaseStorage.getInstance("gs://music-media-23f37.appspot.com/");
+        StorageReference storageRef = storage.getReference();
 
         final long ONE_MEGABYTE = 1024 * 1024 * 100;
 
-        storageRef.listAll().addOnSuccessListener(new OnSuccessListener<ListResult>() {
+        storageRef.child(url).listAll().addOnSuccessListener(new OnSuccessListener<ListResult>() {
             @Override
             public void onSuccess(ListResult listResult) {
                 for (StorageReference fileRef :listResult.getItems()){
