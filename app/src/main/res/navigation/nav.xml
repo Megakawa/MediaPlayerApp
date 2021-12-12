@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav"
-    app:startDestination="@id/mainFragment">
+    app:startDestination="@id/loginFragment">
 
     <fragment
         android:id="@+id/listMusicFragment"
@@ -28,4 +28,47 @@
             android:id="@+id/action_mainFragment_to_listMusicFragment"
             app:destination="@id/listMusicFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/selection_Fragment"
+        android:name="com.example.zingmp3fake.View.Selection_Fragment"
+        android:label="fragment_selection_"
+        tools:layout="@layout/fragment_selection_" >
+        <action
+            android:id="@+id/action_selection_Fragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+        <action
+            android:id="@+id/action_selection_Fragment_to_listMusicOffFragment"
+            app:destination="@id/listMusicOffFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.zingmp3fake.View.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_selection_Fragment"
+            app:destination="@id/selection_Fragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_signUpFragment"
+            app:destination="@id/signUpFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/signUpFragment"
+        android:name="com.example.zingmp3fake.View.SignUpFragment"
+        android:label="fragment_sign_up"
+        tools:layout="@layout/fragment_sign_up" />
+    <fragment
+        android:id="@+id/listMusicOffFragment"
+        android:name="com.example.zingmp3fake.View.ListMusicOffFragment"
+        android:label="fragment_list_music_off"
+        tools:layout="@layout/fragment_list_music_off" >
+        <action
+            android:id="@+id/action_listMusicOffFragment_to_playMusicOffFragment"
+            app:destination="@id/playMusicOffFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/playMusicOffFragment"
+        android:name="com.example.zingmp3fake.View.PlayMusicOffFragment"
+        android:label="fragment_play_music_off"
+        tools:layout="@layout/fragment_play_music_off" />
 </navigation>
