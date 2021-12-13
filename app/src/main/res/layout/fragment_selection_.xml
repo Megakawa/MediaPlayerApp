@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".View.Selection_Fragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Choose Mode"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="150dp"
+        android:textColor="@color/white"
+        android:textSize="50dp"></TextView>
+
+    <LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_gravity="center"
+        android:layout_height="200dp"
+        android:weightSum="2"
+        android:orientation="horizontal">
+        <com.mikhaellopez.circularimageview.CircularImageView
+            android:id="@+id/cv_online"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_weight="1"
+            android:layout_margin="30dp"
+            android:src="@drawable/acoustic_headphones_wireframe_online_music_title_with_neon_radio_wave_contour_illustration_with_outline_portable_earphones_dj_headset_device_line_art_style_dark_blue_background_177953_96"
+            android:layout_gravity="center">
+
+        </com.mikhaellopez.circularimageview.CircularImageView>
+        <com.mikhaellopez.circularimageview.CircularImageView
+            android:id="@+id/cv_offline"
+            android:layout_width="150dp"
+            android:layout_weight="1"
+            android:layout_margin="30dp"
+            android:src="@drawable/images"
+            android:layout_height="150dp"
+            android:layout_gravity="center">
+
+        </com.mikhaellopez.circularimageview.CircularImageView>
+    </LinearLayout>
+</LinearLayout>
+
+</FrameLayout>
