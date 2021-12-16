@@ -78,28 +78,28 @@ This project is mantained by:
 
 2. App SignUp screen:
 
-   ![](./image/SignUp.jpg)
+   ![](./image/SignUp.png)
 
 3. Choose Mode screen:
 
-   ![](./image/ChooseMode.jpg)
+   ![](./image/ChooseMode.png)
 
 4. OnlineFeature Screen:
 
-   ![](./image/OnlineFeature.jpg)
+   ![](./image/OnlineFeature.png)
    
 5. OnlineFeature ListSong Screen:
 
-   ![](./image/ListSong.jpg)
+   ![](./image/ListSong.png)
    
    
 6. OnlineFeature PlaySong Screen:
 
-   ![](./image/PlaySong.jpg)
+   ![](./image/PlaySong.png)
 
 7. OfflineFeature screen:
 
-   ![](./image/OfflineFeature.jpg)
+   ![](./image/OfflineFeature.png)
 
 ## Contributing
 
