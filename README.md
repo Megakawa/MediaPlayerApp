@@ -1,5 +1,6 @@
 # MediaPlayerApp
-This is the app that I and my friends developed in 2 months based on Spotify.We built this app all by ourselves and only took inspiration from the Spotify interface.
+This is the app that I and my friends developed in 2 months based on Spotify.
+We built this app all by ourselves and only took inspiration from the Spotify interface.
 
 ## Installation
 1. Clone this repository and import into **Android Studio**:
