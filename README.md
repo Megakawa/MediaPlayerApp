@@ -71,7 +71,7 @@ From Android Studio:
 ## Maintainers
 This project is mantained by:
 * [Megakawa](http://github.com/Megakawa)
-## A little demo
+## Demo
 1. App login screen:
 
    ![](./image/Login.png)
